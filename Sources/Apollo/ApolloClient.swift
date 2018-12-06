@@ -60,7 +60,7 @@ public class ApolloClient {
   ///
   /// - Parameter url: The URL of a GraphQL server to connect to.
   public convenience init(url: URL) {
-    self.init(networkTransport: HTTPNetworkTransport(url: url))
+    self.init(networkTransport: HTTPNetworkTransport(url: url, session: URLSession(configuration: URLSessionConfiguration.default)))
   }
 
   /// Clears apollo cache
